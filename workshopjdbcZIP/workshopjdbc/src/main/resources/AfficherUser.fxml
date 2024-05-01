@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="501.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherUser">
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="800.0" scaleShape="false">
+         <children>
+            <ImageView fitHeight="110.0" fitWidth="808.0" layoutX="-6.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/barreup.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="734.0" layoutY="104.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="retour" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <ImageView fitHeight="56.0" fitWidth="183.0" layoutX="20.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ivest.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="242.0" layoutY="105.0" mnemonicParsing="false" onAction="#chercher" text="chercher" />
+            <ImageView fitHeight="425.0" fitWidth="200.0" layoutX="-9.0" layoutY="97.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/barrelat.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="recherche" layoutX="306.0" layoutY="105.0" />
+            <Button layoutX="664.0" layoutY="104.0" mnemonicParsing="false" onAction="#ajouter" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></Button>
+            <ImageView fitHeight="389.0" fitWidth="200.0" layoutX="-9.0" layoutY="134.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/mrgauche2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="42.0" layoutX="747.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/btnlogout.png" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="197.0" layoutY="140.0" prefHeight="382.0" prefWidth="586.0" style="-fx-padding: 5px; -fx-border-width: 0;">
+               <content>
+                  <FlowPane fx:id="flowpaneaff" prefHeight="370.0" prefWidth="560.0" />
+               </content>
+            </ScrollPane>
+            <Button layoutX="747.0" layoutY="34.0" mnemonicParsing="false" onAction="#logout" opacity="0.0" prefHeight="26.0" prefWidth="38.0" text="logout">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="614.0" layoutY="104.0" mnemonicParsing="false" onAction="#ouvrirstat" style="-fx-background-color: #43f501; -fx-background-radius: 30;" text="Stat" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button layoutX="542.0" layoutY="104.0" mnemonicParsing="false" onAction="#archive" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Archive" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="rafraichir" layoutX="460.0" layoutY="104.0" mnemonicParsing="false" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Rafraîchir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="29.0" layoutX="202.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoPDF.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="202.0" layoutY="104.0" mnemonicParsing="false" onAction="#btnpdf" opacity="0.0" prefHeight="26.0" prefWidth="29.0" text="Button">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

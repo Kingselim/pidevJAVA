@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="531.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.MenuAdmin">
+   <children>
+      <ImageView fitHeight="549.0" fitWidth="221.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/barrelat.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="765.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/barreup.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="167.0" layoutX="28.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ivest.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="29.0" layoutX="695.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/btnlogout.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="375.0" fitWidth="204.0" layoutX="-3.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/mrgauche.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="206.0" layoutY="98.0" prefHeight="449.0" prefWidth="551.0">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="82.0" layoutX="88.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logouser.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="107.0" fitWidth="82.0" layoutX="235.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoasso.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="125.0" fitWidth="116.0" layoutX="396.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logocompte.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="116.0" fitWidth="97.0" layoutX="76.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logopret.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="98.0" fitWidth="133.0" layoutX="232.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logoseminaire.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="112.0" fitWidth="126.0" layoutX="391.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logosonsoring.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="105.0" layoutY="172.0" mnemonicParsing="false" onAction="#gouser" text="User" />
+            <Button layoutX="419.0" layoutY="370.0" mnemonicParsing="false" onAction="#gosponsoring" text="Sponsoring" />
+            <Button layoutX="428.0" layoutY="172.0" mnemonicParsing="false" onAction="#gocompte" text="Compte" />
+            <Button layoutX="242.0" layoutY="370.0" mnemonicParsing="false" onAction="#goseminaire" text="Seminaire" />
+            <Button layoutX="238.0" layoutY="172.0" mnemonicParsing="false" onAction="#goassociation" text="association" />
+            <Button layoutX="105.0" layoutY="370.0" mnemonicParsing="false" onAction="#gopret" text="Pret" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="701.0" layoutY="36.0" mnemonicParsing="false" onAction="#logout" opacity="0.0" prefHeight="26.0" prefWidth="28.0" text="logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

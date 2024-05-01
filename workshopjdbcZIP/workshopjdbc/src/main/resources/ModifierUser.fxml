@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="500.0" maxWidth="800.0" prefHeight="500.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierUser">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#264eca" height="416.0" layoutX="-10.0" layoutY="84.0" stroke="WHITE" strokeType="OUTSIDE" width="191.0" />
+      <ImageView fitHeight="87.0" fitWidth="810.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/barreup.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="50.0" fitWidth="151.0" layoutX="30.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ivest.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="name" layoutX="236.0" layoutY="178.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="address" layoutX="514.0" layoutY="279.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="email" layoutX="236.0" layoutY="378.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="phone" layoutX="236.0" layoutY="327.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="dtb" layoutX="236.0" layoutY="277.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="lastname" layoutX="236.0" layoutY="229.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="id" disable="true" layoutX="514.0" layoutY="178.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="image" layoutX="514.0" layoutY="325.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <Button layoutX="726.0" layoutY="97.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="659.0" layoutY="97.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="38.0" layoutY="114.0" />
+      <Button layoutX="694.0" layoutY="326.0" mnemonicParsing="false" onAction="#imgbtn" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Image" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifwallet" layoutX="592.0" layoutY="97.0" mnemonicParsing="false" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Wallet" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="236.0" layoutY="154.0" text="Nom" />
+      <Label layoutX="236.0" layoutY="208.0" text="Prenom" />
+      <Label layoutX="236.0" layoutY="259.0" prefHeight="18.0" prefWidth="180.0" text="Date de Naissance   yyyy-mm-dd" />
+      <Label layoutX="237.0" layoutY="309.0" />
+      <Label layoutX="237.0" layoutY="309.0" text="Numéro de téléphone" />
+      <Label layoutX="237.0" layoutY="357.0" text="Email" />
+      <Label layoutX="514.0" layoutY="157.0" text="ID" />
+      <Label layoutX="513.0" layoutY="208.0" text="Genre" />
+      <Label layoutX="513.0" layoutY="259.0" text="Adresse" />
+      <Label layoutX="514.0" layoutY="309.0" text="Image" />
+      <ComboBox fx:id="combosexe" layoutX="514.0" layoutY="229.0" prefHeight="30.0" prefWidth="180.0" promptText="Genre" style="-fx-background-color: #7bb4fb; -fx-border-color: #0046fe; -fx-border-radius: 5;" />
+   </children>
+</AnchorPane>
