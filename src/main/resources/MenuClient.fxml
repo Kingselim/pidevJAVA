@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="579.0" prefWidth="831.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.MenuClient">
+   <children>
+      <ImageView fitHeight="579.0" fitWidth="175.0" pickOnBounds="true" style="-fx-background-color: white;">
+         <image>
+            <Image url="@images/NavClientCompte.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="61.0" layoutY="173.0" mnemonicParsing="false" onAction="#gocompte" opacity="0.0" style="-fx-background-color: none;" text="Compte" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="72.0" layoutY="221.0" mnemonicParsing="false" onAction="#gopret" opacity="0.0" style="-fx-background-color: none;" text="Pret" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="53.0" layoutY="272.0" mnemonicParsing="false" onAction="#goseminair" opacity="0.0" style="-fx-background-color: none;" text="Seminaire" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="48.0" layoutY="324.0" mnemonicParsing="false" onAction="#gosponsoring" opacity="0.0" style="-fx-background-color: none;" text="Sponsoring" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="47.0" layoutY="375.0" mnemonicParsing="false" onAction="#goassociation" opacity="0.0" style="-fx-background-color: none;" text="Association" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="776.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/btnlogout.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="776.0" layoutY="26.0" mnemonicParsing="false" onAction="#goout" opacity="0.0" prefHeight="26.0" prefWidth="35.0" text="logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

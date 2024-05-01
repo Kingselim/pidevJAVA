@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierTransactionController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="376.0" fitWidth="238.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Barre-bleue.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="30.0" layoutY="169.0" prefHeight="50.0" prefWidth="156.0" text="Modifier  transaction">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="account_debited" layoutX="397.0" layoutY="99.0" />
+            <TextField fx:id="account_destination" layoutX="397.0" layoutY="140.0" />
+            <TextField fx:id="date_transaction" layoutX="397.0" layoutY="182.0" />
+            <TextField fx:id="type_transaction" layoutX="398.0" layoutY="220.0" />
+            <TextField fx:id="description" layoutX="398.0" layoutY="255.0" />
+            <TextField fx:id="montant" layoutX="397.0" layoutY="55.0" />
+            <Button layoutX="397.0" layoutY="337.0" mnemonicParsing="false" onAction="#modifier" text="Modifier" textFill="#3aef04" />
+            <Button layoutX="496.0" layoutY="337.0" mnemonicParsing="false" onAction="#retour" text="Retour" textFill="#f40101" />
+            <Label layoutX="281.0" layoutY="59.0" prefHeight="18.0" prefWidth="104.0" text="Montant:" />
+            <Label layoutX="281.0" layoutY="103.0" prefHeight="18.0" prefWidth="112.0" text="Compte Utilisateur:" />
+            <Label layoutX="282.0" layoutY="144.0" text="Compte Destinataire:" />
+            <Label layoutX="281.0" layoutY="186.0" prefHeight="18.0" prefWidth="112.0" text="Date Transaction:" />
+            <Label layoutX="281.0" layoutY="224.0" prefHeight="18.0" prefWidth="112.0" text="Type Transaction:" />
+            <Label layoutX="283.0" layoutY="260.0" prefHeight="18.0" prefWidth="104.0" text="Description:" />
+            <TextField fx:id="id_account_id" layoutX="398.0" layoutY="294.0" />
+            <Label layoutX="284.0" layoutY="298.0" prefHeight="18.0" prefWidth="98.0" text="Compte:" />
+            <ImageView fitHeight="39.0" fitWidth="98.0" layoutX="28.0" layoutY="16.0">
+               <image>
+                  <Image url="@images/ivest.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
