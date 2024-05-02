@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.test.test.ActionConroller.ShowListActions">
+    <children>
+        <Button layoutX="14.0" layoutY="36.0" mnemonicParsing="false" onAction="#back" text="back" />
+      <Pane disable="true" focusTraversable="true" layoutX="59.0" layoutY="92.0" prefHeight="164.0" prefWidth="212.0" style="-fx-background-color: #ffff;">
+         <children>
+            <ImageView fitHeight="59.0" fitWidth="160.0" layoutX="23.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="title" fontSmoothingType="LCD" layoutX="94.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="title">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="2.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Organized for :" underline="true" />
+            <Text fx:id="organizedfor" layoutX="93.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="organizedfor" />
+            <Text fx:id="description" layoutX="3.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="desc" />
+            <Button layoutX="1.0" layoutY="136.0" mnemonicParsing="false" onAction="#ShowActionDetails" text="Show" />
+         </children>
+      </Pane>
+
+    </children>
+
+</AnchorPane> -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.test.test.ActionConroller.ShowListActions">
+    <children>
+        <Button fx:id="backid" layoutX="211.0" layoutY="17.0" mnemonicParsing="false" onAction="#back" text="Retour" visible="false" />
+        <ScrollPane layoutX="179.0" layoutY="76.0" prefHeight="485.0" prefWidth="604.0">
+            <content>
+                <VBox fx:id="actionsContainer" spacing="10" />
+            </content>
+        </ScrollPane>
+      <Text layoutX="196.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes des actions">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="600.0" fitWidth="188.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesAssociation/NavClientAssociation.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="36.0" fitWidth="52.0" layoutX="711.0" layoutY="25.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@imagesAssociation/back_2099190.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="testView" fitHeight="81.0" fitWidth="141.0" layoutX="218.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="KeywordTextFiled" layoutX="460.0" layoutY="31.0" prefHeight="26.0" prefWidth="182.0" promptText="Chercher action(s)" />
+    </children>
+</AnchorPane>
