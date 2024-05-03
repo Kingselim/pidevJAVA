@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherParticipant">
+   <children>
+      <Text fill="#2044d7" layoutX="229.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back Client " textAlignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#cf712a" layoutX="32.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des participants :">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TableView fx:id="participant" layoutX="49.0" layoutY="104.0" prefHeight="226.0" prefWidth="525.0">
+        <columns>
+          <TableColumn fx:id="idseminar_id" prefWidth="83.19995498657227" text="Id_Seminaire" />
+          <TableColumn fx:id="name" prefWidth="83.20001220703125" text="Nom" />
+            <TableColumn fx:id="last_name" prefWidth="71.19993591308594" text="Prenom" />
+            <TableColumn fx:id="function" prefWidth="130.4000244140625" text="Fonctions" />
+            <TableColumn fx:id="phone" prefWidth="156.0" text="Num_Tel" />
+        </columns>
+      </TableView>
+      <Button fx:id="SupprimerParti" layoutX="484.0" layoutY="352.0" mnemonicParsing="false" onAction="#SupprimerParti" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #d92f2f;" text="Supprimer" textAlignment="CENTER" textFill="#1b1919" />
+      <Button fx:id="AjouterParticip" layoutX="378.0" layoutY="353.0" mnemonicParsing="false" onAction="#AjouterParticip" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #259c1a;" text="Ajouter" textAlignment="CENTER" textFill="#131513" />
+      <Button fx:id="Return" layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#Return" style="-fx-background-color: #e8c015;" text="Retour" textAlignment="CENTER" />
+      <Button fx:id="buttonpdf" layoutX="523.0" layoutY="23.0" mnemonicParsing="false" onAction="#printLogPdf" prefHeight="54.0" prefWidth="52.0">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/format-de-fichier-pdf.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

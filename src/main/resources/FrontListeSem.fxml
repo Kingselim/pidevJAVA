@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.FrontListeSemin">
+   <children>
+      <ImageView fitHeight="51.0" fitWidth="167.0" layoutX="12.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ivest.png" />
+         </image>
+      </ImageView>
+      <Text fill="#fa6a16" layoutX="188.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Seminaires " textAlignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <VBox layoutX="25.0" layoutY="60.0" prefHeight="358.0" prefWidth="582.0">
+         <children>
+            <VBox prefHeight="346.0" prefWidth="582.0">
+               <children>
+                  <ScrollPane fx:id="seminaireFlowPane" prefHeight="345.0" prefWidth="582.0">
+                     <content>
+                        <FlowPane fx:id="SeminaireFlowPane" prefHeight="156.0" prefWidth="163.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
