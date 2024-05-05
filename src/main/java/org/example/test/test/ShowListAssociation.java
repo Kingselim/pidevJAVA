@@ -108,7 +108,8 @@ public class ShowListAssociation {
         UpdateAssociation controller = loader.getController();
         myIndex = list_association.getSelectionModel().getSelectedIndex();
         id = ids[myIndex];
-        controller.initData(id);
+        String direction = "Show_list_association.fxml";
+        controller.initData(id, direction);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -116,61 +117,7 @@ public class ShowListAssociation {
         stage.show();
     }
 
-    /*
-    @FXML
-    void initialize() {
 
-        try {
-
-            List<Association> associations = as.getDisabledAssociations(1);
-
-            ObservableList<Association> observableList = FXCollections.observableList(associations);
-
-            ids = new int[associations.size()];
-
-            for (int i = 0; i < associations.size(); i++) {
-                ids[i] = associations.get(i).getId();
-            }
-
-            list_association.setItems(observableList);
-
-            id_userCol.setCellValueFactory(new PropertyValueFactory<>("id_user"));
-            SolcialMedCol.setCellValueFactory(new PropertyValueFactory<>("facebook_adresse"));
-            adresseCol.setCellValueFactory(new PropertyValueFactory<>("city"));
-            emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
-            phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
-            nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-            //Initial filtred loist
-
-
-
-
-
-        } catch (Exception e) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
-        }
-
-        list_association.setRowFactory( tv -> {
-            TableRow<Association> myRow = new TableRow<>();
-            myRow.setOnMouseClicked (event ->
-            {
-                if (event.getClickCount() == 1 && (!myRow.isEmpty()))
-                {
-                    myIndex =  list_association.getSelectionModel().getSelectedIndex();
-
-                    id = Integer.parseInt(String.valueOf(list_association.getItems().get(myIndex).getId()));
-                }
-            });
-
-            return myRow;
-        });
-    }
-    */
 
     @FXML
     void initialize() {

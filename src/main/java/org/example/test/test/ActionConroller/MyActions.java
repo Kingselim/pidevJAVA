@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +22,7 @@ import org.example.test.test.services.ActionService;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,6 +39,9 @@ public class MyActions {
 
     @FXML
     private Button backid;
+
+    @FXML
+    private TextField KeywordTextFiled;
 
     ActionService as = new ActionService();
 
@@ -68,7 +73,8 @@ public class MyActions {
             Parent root = loader.load();
 
             ShowDetailsAction controller = loader.getController();
-            controller.initData(action);
+            String direction = "myActions.fxml";
+            controller.initData(action,direction);
 
             Stage stage = (Stage) backid.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -112,10 +118,39 @@ public class MyActions {
         }
     }
 
-
     @FXML
     void initialize() {
+        // Fetch all actions
         List<Action> actions = as.getAll();
+
+        // Initialize the filteredActions list as a normal List<Action>
+        List<Action> filteredActions = new ArrayList<>(actions);
+
+        // Add listener to TextField
+        KeywordTextFiled.textProperty().addListener((observable, oldValue, newValue) -> {
+            String lowerCaseFilter = newValue.toLowerCase();
+            filteredActions.clear(); // Clear existing filtered actions
+
+            // Filter matches name or description
+            for (Action action : actions) {
+                if (action.getName_action().toLowerCase().contains(lowerCaseFilter)) {
+                    filteredActions.add(action); // Add to filtered list if matches
+                }
+            }
+
+            // Populate the actions container with filtered actions
+            populateActionsContainer(filteredActions);
+        });
+
+        // Populate the actions container initially with all actions
+        populateActionsContainer(filteredActions);
+    }
+
+
+    private void populateActionsContainer(List<Action> actions) {
+        actionsContainer.getChildren().clear(); // Clear existing content
+
+        // Add filtered actions to the container
         for (Action action : actions) {
             Pane actionPane = createActionPane(action);
             actionsContainer.getChildren().add(actionPane);
@@ -177,48 +212,4 @@ public class MyActions {
         return pane;
     }
 
-
-
-
-    /*private Pane createActionPane(Action action) {
-
-        Pane pane = new Pane();
-        pane.setPrefWidth(740.0);
-        pane.setPrefHeight(164.0);
-
-        pane.setStyle("-fx-background-color: #ffff;");
-
-        Text title = new Text(action.getName_action());
-        title.setLayoutX(220.0);
-        title.setLayoutY(80.0);
-
-
-        Text organizedFor = new Text("Organisée pour  : " + action.getOrganized_for());
-        organizedFor.setLayoutX(10.0);
-        organizedFor.setLayoutY(99.0);
-        organizedFor.setUnderline(true);
-
-        String partOfDescription = action.getDescription_action().substring(0, 46);
-        Text description = new Text(partOfDescription + "...");
-        description.setLayoutX(10.0);
-        description.setLayoutY(121.0);
-
-        Button detailsButton = new Button("Voir");
-        detailsButton.setLayoutX(10.0);
-        detailsButton.setLayoutY(133.0);
-        detailsButton.setOnAction(e -> showActionDetails(action));
-
-        Button deleteButton = new Button("Suprrimer");
-        deleteButton.setLayoutX(80.0);
-        deleteButton.setLayoutY(133.0);
-        deleteButton.setOnAction(e -> OnDeleteAction(action));
-
-        Button updateButton = new Button("Modifier");
-        updateButton.setLayoutX(150.0);
-        updateButton.setLayoutY(133.0);
-        updateButton.setOnAction(e -> OnUpdateAction(action));
-
-        pane.getChildren().addAll(title, organizedFor, description, detailsButton,deleteButton,updateButton);
-        return pane;
-    }*/
 }

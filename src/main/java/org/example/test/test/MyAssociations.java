@@ -100,7 +100,9 @@ public class MyAssociations {
             Parent root = loader.load();
 
             UpdateAssociation controller = loader.getController();
-            controller.initData(association.getId());
+
+            String direction = "MyAssociations.fxml";
+            controller.initData(association.getId(),direction);
 
             Stage stage = (Stage) backid.getScene().getWindow();
             stage.setScene(new Scene(root));

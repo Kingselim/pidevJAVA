@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,7 +22,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </Text>
-      <AnchorPane layoutX="320.0" layoutY="168.0" prefHeight="116.0" prefWidth="312.0" style="-fx-border-color: #0046fe; -fx-border-radius: 30;">
+      <AnchorPane layoutX="320.0" layoutY="275.0" prefHeight="116.0" prefWidth="312.0" style="-fx-border-color: #0046fe; -fx-border-radius: 30;">
          <children>
             <Button layoutX="60.0" layoutY="38.0" mnemonicParsing="false" onAction="#show_associations" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="%admin_label2" textFill="WHITE">
                <font>
@@ -33,7 +36,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="322.0" layoutY="315.0" prefHeight="116.0" prefWidth="312.0" style="-fx-border-color: #0046fe; -fx-border-radius: 30;">
+      <AnchorPane layoutX="322.0" layoutY="418.0" prefHeight="116.0" prefWidth="312.0" style="-fx-border-color: #0046fe; -fx-border-radius: 30;">
          <children>
             <Button layoutX="56.0" layoutY="40.0" mnemonicParsing="false" onAction="#show_requests" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="%admin_label3" textFill="WHITE">
                <font>
@@ -47,15 +50,51 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="697.0" layoutY="31.0" onMouseClicked="#translateToFrench" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="686.0" layoutY="31.0" onMouseClicked="#translateToFrench" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagesAssociation/france_8367455.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="748.0" layoutY="31.0" onMouseClicked="#translateToEnglish" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="737.0" layoutY="31.0" onMouseClicked="#translateToEnglish" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@imagesAssociation/uk_8367443.png" />
          </image>
       </ImageView>
+      <Pane layoutX="191.0" layoutY="102.0" prefHeight="134.0" prefWidth="581.0" style="-fx-background-color: #171717;">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="165.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagesAssociation/group_1357616.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="386.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagesAssociation/donation_6313099.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nbr_associations" fill="WHITE" layoutX="180.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="nbr_actions" fill="WHITE" layoutX="402.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="161.0" layoutY="83.0" prefHeight="9.0" prefWidth="57.0" />
+            <Separator layoutX="382.0" layoutY="83.0" prefHeight="9.0" prefWidth="57.0" />
+            <Label layoutX="160.0" layoutY="94.0" text="Associations" textFill="#43f501">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="391.0" layoutY="94.0" text="Actions" textFill="#43f501">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

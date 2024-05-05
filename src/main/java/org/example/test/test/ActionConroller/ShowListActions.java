@@ -76,7 +76,8 @@ public class ShowListActions {
             Parent root = loader.load();
 
             ShowDetailsAction controller = loader.getController();
-            controller.initData(action);
+            String direction = "show_list_actions.fxml";
+            controller.initData(action,direction);
 
             Stage stage = (Stage) backid.getScene().getWindow();
             stage.setScene(new Scene(root));

@@ -7,9 +7,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.test.test.models.Action;
+import org.example.test.test.models.Association;
+import org.example.test.test.services.ActionService;
+import org.example.test.test.services.AssociationService;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -19,6 +25,26 @@ public class Admin {
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private Text nbr_actions;
+
+    @FXML
+    private Text nbr_associations;
+
+    AssociationService associationService = new AssociationService();
+    ActionService actionService = new ActionService();
+
+    @FXML
+    void initialize() {
+
+        Locale currentLocale = LanguageSettings.getCurrentLocale();
+        System.out.println(currentLocale.getLanguage());
+        List<Association> associations = associationService.getAll();
+        List<Action> actions = actionService.getAll();
+
+        nbr_associations.setText(String.valueOf(associations.size()));
+        nbr_actions.setText(String.valueOf(actions.size()));
+    }
 
 
     @FXML

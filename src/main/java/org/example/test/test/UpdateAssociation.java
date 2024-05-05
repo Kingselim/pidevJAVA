@@ -57,6 +57,8 @@ public class UpdateAssociation  {
     @FXML
     private Text errorLabel;
 
+    private String direction;
+
     private final AssociationService as = new AssociationService();
 
     private Association myAssociation = new Association();
@@ -110,7 +112,7 @@ public class UpdateAssociation  {
     @FXML
     void backAdmin(MouseEvent event) throws IOException {
         ResourceBundle bundle = ResourceBundle.getBundle("/org/example/test/test/Messages", LanguageSettings.getCurrentLocale());
-        Parent root = FXMLLoader.load(getClass().getResource("/org/example/test/test/AssociationFXML/Show_list_association.fxml"),bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("/org/example/test/test/AssociationFXML/"+direction),bundle);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -118,8 +120,9 @@ public class UpdateAssociation  {
     }
 
 
-    public void initData(int id) {
+    public void initData(int id, String dir) {
 
+        this.direction=dir;
         myAssociation = as.getById(id);
         if (myAssociation != null) {
             name.setText(myAssociation.getName());
