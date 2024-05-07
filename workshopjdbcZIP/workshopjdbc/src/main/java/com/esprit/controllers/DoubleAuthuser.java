@@ -1,11 +1,17 @@
 package com.esprit.controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class DoubleAuthuser {
@@ -36,6 +42,23 @@ public class DoubleAuthuser {
                 }
             } else if (codeDuSysteme.equals(codeinserer)) {
                 System.out.println("lee code est bon");
+                Node source = (Node) event.getSource();
+                Stage currentStage = (Stage) source.getScene().getWindow();
+                currentStage.close(); // Close the current stage
+                // Load and show the new interface
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/MenuAdmin.fxml"));
+                    Parent root = loader.load();
+
+
+                    Stage newStage = new Stage();
+                    newStage.setScene(new Scene(root));
+                    newStage.show();
+                    newStage.setTitle("Menu Admin");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Handle exception, if any
+                }
             }
         });
 
