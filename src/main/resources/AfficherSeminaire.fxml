@@ -10,35 +10,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherSeminaire">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherSeminaire">
    <children>
-       <ImageView fitHeight="64.0" fitWidth="63.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+       <ImageView fitHeight="77.0" fitWidth="103.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
            <image>
                <Image url="@images/logoseminaire.png" />
            </image>
        </ImageView>
 
-      <TableView fx:id="Seminar" layoutX="82.0" layoutY="125.0" prefHeight="277.0" prefWidth="506.0">
+      <TableView fx:id="Seminar" layoutX="54.0" layoutY="125.0" prefHeight="337.0" prefWidth="568.0">
         <columns>
           <TableColumn fx:id="iduserasso_id" prefWidth="83.20001220703125" text="Id_User" />
-            <TableColumn fx:id="date_seminar" prefWidth="121.60003662109375" text="Date_Seminaire" />
-            <TableColumn fx:id="description" prefWidth="120.79998779296875" text="Description" />
-            <TableColumn fx:id="nomassociation" prefWidth="178.39996948242185" text="Nom_Association" />
+            <TableColumn fx:id="date_seminar" prefWidth="153.59996032714844" text="Date_Seminaire" />
+            <TableColumn fx:id="description" prefWidth="156.79998779296875" text="Description" />
+            <TableColumn fx:id="nomassociation" prefWidth="173.60003662109375" text="Nom_Association" />
         </columns>
       </TableView>
-      <Text layoutX="14.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste Seminaire :" textAlignment="CENTER" wrappingWidth="171.73681640625">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Text>
-      <Text fill="#1c31b9" layoutX="215.0" layoutY="42.0" strokeLineJoin="BEVEL" strokeWidth="0.0" text="Back Client " textAlignment="CENTER" wrappingWidth="206.14984130859375">
+      <Text fill="#1c31b9" layoutX="212.0" layoutY="64.0" strokeLineJoin="BEVEL" strokeWidth="0.0" text="Liste Seminaire " textAlignment="CENTER" wrappingWidth="238.94989013671875">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
       <ButtonBar layoutX="318.0" layoutY="340.0" prefHeight="40.0" prefWidth="70.0" />
-      <Button fx:id="PoubelleButton" layoutX="482.0" layoutY="418.0" mnemonicParsing="false" onAction="#deleteOne" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #f21212;" text="Supprimer" textAlignment="CENTER" textFill="#232222" />
-    <Button layoutX="360.0" layoutY="421.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #50ac40;" text="Ajouter" textFill="#171817" />
-      <Button fx:id="listeParti" layoutX="458.0" layoutY="14.0" mnemonicParsing="false" onAction="#listeParti" style="-fx-background-color: #e8c015;" text="Liste des participants" textAlignment="CENTER" />
+      <Button fx:id="PoubelleButton" layoutX="563.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteOne" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #f21212;" text="Supprimer" textAlignment="CENTER" textFill="#232222" />
+    <Button layoutX="458.0" layoutY="479.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #50ac40;" text="Ajouter" textFill="#171817" />
+      <Button fx:id="listeParti" layoutX="521.0" layoutY="18.0" mnemonicParsing="false" onAction="#listeParti" style="-fx-background-color: #e8c015;" text="Liste des participants" textAlignment="CENTER" />
    </children>
 </AnchorPane>

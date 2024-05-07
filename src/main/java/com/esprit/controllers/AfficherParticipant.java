@@ -9,6 +9,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -19,7 +20,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import okhttp3.*;
 
 public class AfficherParticipant implements Initializable {
 
@@ -227,6 +230,9 @@ public class AfficherParticipant implements Initializable {
             // Appeler la méthode generatePdf de la classe pdfgenerator pour générer le PDF avec les détails du seminaire sélectionné
             pdfgenerator.generatePdf(selectedSeminaire.getLast_name(),selectedSeminaire.getName(),selectedSeminaire.getIdseminar_id(),selectedSeminaire.getPhone());
 
+            // Appeler la méthode envoyermail au lieu de generatePdf pour envoyer un email
+            envoyermail(selectedSeminaire);
+
             showAlert("PDF Created", "Seminaire details printed to PDF successfully.");
 
         } catch (Exception e) {
@@ -234,6 +240,28 @@ public class AfficherParticipant implements Initializable {
             e.printStackTrace();
         }
     }
+    public void envoyermail(Participant participant)
+    {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        MediaType mediaType = MediaType.parse("application/json");
+        RequestBody body = RequestBody.create(mediaType, "{\"from\":{\"email\":\"mailtrap@demomailtrap.com\",\"name\":\"Transaction effectuée avec succées\"},\"to\":[{\"email\":\"selim03gaaloul@gmail.com\"}],\"subject\":\"Verification de transaction\",\"text\":\"Merci d'avoir subvenu et d'avoir effectuée une transaction \",\"category\":\"Integration Test\"}");
+        Request request = new Request.Builder()
+                .url("https://send.api.mailtrap.io/api/send")
+                .method("POST", body)
+                .addHeader("Authorization", "Bearer e0970a027a348eb6c62fbf88336ac050")
+                .addHeader("Content-Type", "application/json")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            System.out.println("mailenvoyer");
+        } catch (IOException e) {
+            //throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+        }
+    }
+
 
     void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

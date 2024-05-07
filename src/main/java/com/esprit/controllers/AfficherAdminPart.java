@@ -224,11 +224,7 @@ public class AfficherAdminPart implements Initializable {
     private String generateQRContent(Participant Participant) {
         // Générer le contenu du code QR en fonction des informations du Participant
         // Par exemple, vous pouvez concaténer les détails du Participant dans une chaîne
-        return "ID: " + Participant.getId() + "\n" +
-                "Id_Seminaire: " + Participant.getIdseminar_id() + "\n" +
-                "Nom du participant : " + Participant.getName() + "\n" +
-                "Prenom du participant : " + Participant.getLast_name() + "\n" +
-                "Fonction : " + Participant.getFunction() + "\n" +
+        return
                 "Phone :" + Participant.getPhone();
 
     }

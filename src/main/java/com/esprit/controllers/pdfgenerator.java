@@ -64,7 +64,7 @@ public class pdfgenerator {
             addNormalText(document, "Bonjour ! Mmme/Mr ");
             addBoldRedText(document, last_name);
             addBoldRedText(document, name);
-            addNormalText(document, "Vous etes inscrit au seminaire avec l'id ");
+            addNormalText(document, "Vous etes inscrit au seminaire : ");
             addBoldRedText(document, String.valueOf(idseminar_id));
             addNormalText(document, "avec le numéro du téléphone ");
             addBoldRedText(document, String.valueOf(phone));

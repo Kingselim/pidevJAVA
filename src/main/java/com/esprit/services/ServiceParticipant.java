@@ -93,5 +93,34 @@ public class ServiceParticipant implements IService<Participant> {
         return lu;
     }
 
+    public List<Participant> getParticipantsForSeminaire(int idSeminaire) {
+        List<Participant> participants = new ArrayList<>();
+        try {
+            String query = "SELECT participant.* \n" +
+                    "FROM participant\n" +
+                    "INNER JOIN seminar ON participant.idseminar_id = seminar.id\n" +
+                    "WHERE seminar.id = ?;";
+            PreparedStatement pst = cnx.prepareStatement(query);
+            pst.setInt(1, idSeminaire);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                Participant participant = new Participant();
+                participant.setId(rs.getInt("id"));
+                participant.setIdseminar_id(rs.getInt("idseminar_id"));
+                participant.setName(rs.getString("name"));
+                participant.setLast_name(rs.getString("last_name"));
+                participant.setFunction(rs.getString("function"));
+                participant.setPhone(rs.getInt("phone"));
+                participants.add(participant);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return participants;
+    }
+
+
+
+
 }
 

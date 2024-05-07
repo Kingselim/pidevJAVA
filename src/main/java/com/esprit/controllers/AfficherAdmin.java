@@ -1,5 +1,7 @@
 package com.esprit.controllers;
 import com.esprit.models.Seminaire;
+import com.esprit.models.Participant;
+import com.esprit.services.ServiceParticipant;
 import com.esprit.services.ServiceSeminaire;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -11,11 +13,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseDragEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -70,9 +72,54 @@ public class AfficherAdmin implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         populateTableView();
+        // Lier la méthode afficherParticipants à l'événement de clic de la TableView
+        Seminar.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 1) { // Clic simple détecté
+                // Appeler la méthode afficherParticipants lorsqu'un séminaire est cliqué
+                afficherParticipants(null);
+
+            }
+        });
 
 
     }
+    @FXML
+    void afficherParticipants(ActionEvent event) {
+        // Récupérer le séminaire sélectionné dans le TableView
+        Seminaire seminaireSelectionne = Seminar.getSelectionModel().getSelectedItem();
+
+        if (seminaireSelectionne != null) {
+            // Récupérer l'ID du séminaire sélectionné
+            int idSeminaire = seminaireSelectionne.getId();
+
+            // Appeler la méthode pour récupérer les participants pour cet ID de séminaire
+            ServiceParticipant serviceParticipant = new ServiceParticipant();
+            List<Participant> participants = serviceParticipant.getParticipantsForSeminaire(idSeminaire);
+
+            // Afficher la liste des participants
+            if (!participants.isEmpty()) {
+                // Vous pouvez afficher les participants dans une fenêtre modale, dans une nouvelle TableView, ou toute autre méthode que vous préférez
+                // Par exemple, afficher les participants dans la console pour la démonstration
+                participants.forEach(System.out::println);
+            } else {
+                // Afficher un message si aucun participant n'est trouvé pour ce séminaire
+                showAlert("Aucun participant", "Aucun participant trouvé pour ce séminaire.");
+            }
+        } else {
+            // Si aucun séminaire n'est sélectionné, affichez un message d'erreur
+            showAlert("Erreur", "Veuillez sélectionner un séminaire pour afficher les participants.");
+        }
+    }
+    void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+
+
 
     private void populateTableView() {
         // Retrieve data from the database
@@ -191,6 +238,60 @@ public class AfficherAdmin implements Initializable {
             alert.showAndWait();
         }
     }
+
+
+
+    @FXML
+    void openQRCodeDialog(ActionEvent event) {
+        // Récupérer le séminaire sélectionné dans la table
+        Seminaire selectedSeminar = Seminar.getSelectionModel().getSelectedItem();
+        if (selectedSeminar != null) {
+            // Générer le contenu du code QR en fonction du séminaire sélectionné
+            String qrContent = generateQRContent(selectedSeminar);
+
+            // Générer l'image QR code à partir du contenu
+            Image qrCodeImage = GenerateQRCode.generateQRCodeImage(qrContent);
+
+            // Créer un ImageView pour afficher l'image QR code
+            ImageView imageView = new ImageView(qrCodeImage);
+
+            // Créer une boîte VBox pour organiser l'interface utilisateur
+            VBox vBox = new VBox();
+            vBox.getChildren().addAll(new Label("Code QR du Séminaire :"), imageView);
+
+            // Créer une boîte de dialogue pour afficher le code QR
+            Dialog<Void> qrCodeDialog = new Dialog<>();
+            qrCodeDialog.setTitle("Code QR du Séminaire");
+            qrCodeDialog.getDialogPane().setContent(vBox);
+
+            // Ajouter un bouton de fermeture à la boîte de dialogue
+            ButtonType closeButton = new ButtonType("Fermer", ButtonBar.ButtonData.CANCEL_CLOSE);
+            qrCodeDialog.getDialogPane().getButtonTypes().add(closeButton);
+
+            // Afficher la boîte de dialogue
+            qrCodeDialog.showAndWait();
+        } else {
+            // Afficher une alerte si aucun séminaire n'est sélectionné
+            showAlert("Aucune Sélection", "Veuillez sélectionner un Séminaire pour afficher le code QR.");
+        }
+    }
+
+    // Autres méthodes existantes...
+
+
+
+
+    private String generateQRContent(Seminaire P) {
+        // Générer le contenu du code QR en fonction des informations du Séminaire
+        // Par exemple, vous pouvez concaténer les détails du Séminaire dans une chaîne
+        return "ID_semainaire: " + P.getId() ;
+
+
+    }
+
+
+
+
 
 }
 
