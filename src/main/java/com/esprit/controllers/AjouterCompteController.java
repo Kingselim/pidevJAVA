@@ -63,15 +63,6 @@ public class AjouterCompteController implements Initializable {
                 Solde.setText("");
             }
         });
-/*
-        //validate Type_account
-        type_account.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("Collect de fond|Pret|Autre")) {
-                showAlert("Le type de compte doit être 'Collect de fond', 'Pret' ou 'Autre'.");
-                // Effacer le champ Type_account pour indiquer une saisie invalide
-                type_account.setText("");
-            }
-        });*/
 
 
         //validate State

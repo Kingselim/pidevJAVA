@@ -3,27 +3,19 @@ package com.esprit.controllers;
 import com.esprit.models.account;
 import com.esprit.services.accountService;
 import com.esprit.services.transactionService;
-import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
-import javafx.event.EventHandler;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.security.cert.PolicyNode;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -119,7 +111,7 @@ public class AffichageCompteController {
             e.printStackTrace();
         }
     }
-
+    /*
     @FXML
     void effectuer_transaction(ActionEvent event) throws IOException {
         Node source = (Node) event.getSource();
@@ -130,7 +122,7 @@ public class AffichageCompteController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-    }
+    }*/
 
 
     @FXML
@@ -250,5 +242,41 @@ public class AffichageCompteController {
             showAlert("Erreur lors du rafraîchissement des transactions : " + e.getMessage());
         }
     }
+
+    @FXML
+    void goassociation(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gocompte(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gopret(ActionEvent event) {
+
+    }
+
+    @FXML
+    void goseminaire(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gosponsoring(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gouser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logout(ActionEvent event) {
+
+    }
+
 }
 

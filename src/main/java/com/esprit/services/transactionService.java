@@ -190,11 +190,16 @@ public List<Integer> getAllAccountIds() {
     }
 
     ///partie statistique
-    public List<transaction> getAllTransactions() {
+    public List<transaction> getTop3tansactions() {
         List<transaction> transactions = new ArrayList<>();
 
         // Requête SQL pour sélectionner toutes les transactions
-        String query = "SELECT * FROM transaction";
+        String query= "SELECT * "+
+        "FROM transaction "+
+        "GROUP BY account_destination "+
+        "ORDER BY transaction_count DESC "+
+        "LIMIT 3";
+
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             // Exécution de la requête
@@ -212,7 +217,7 @@ public List<Integer> getAllAccountIds() {
                 int idAccountId = resultSet.getInt("id_account_id");
 
                 // Création de l'objet Transaction avec les données récupérées
-                transaction transaction = new transaction(id, montant, accountDebited, accountDestination, dateTransaction, typeTransaction, description, idAccountId);
+                transaction transaction = new transaction( montant, accountDebited, accountDestination, dateTransaction, typeTransaction, description, idAccountId);
 
                 // Ajout de l'objet Transaction à la liste
                 transactions.add(transaction);
@@ -223,5 +228,56 @@ public List<Integer> getAllAccountIds() {
 
         return transactions;
     }
+
+    public List<transaction> recupererTransactionPret() {
+        List<transaction> transactions = new ArrayList<>();
+        String req = "SELECT * from transaction WHERE type_transaction='pret'";
+        try {
+            PreparedStatement pst = connection.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                transactions.add(new transaction(rs.getInt("id"), rs.getDouble("montant"), rs.getString("account_debited"), rs.getString("account_destination"),rs.getString("date_transaction"),rs.getString("type_transaction"),rs.getString("description"),rs.getInt("id_account_id")));
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return transactions;
+    }
+
+    public List<transaction> recupererTransactionCollect() {
+        List<transaction> transactions = new ArrayList<>();
+        String req = "SELECT * from transaction WHERE type_transaction='collect'";
+        try {
+            PreparedStatement pst = connection.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                transactions.add(new transaction(rs.getInt("id"), rs.getDouble("montant"), rs.getString("account_debited"), rs.getString("account_destination"),rs.getString("date_transaction"),rs.getString("type_transaction"),rs.getString("description"),rs.getInt("id_account_id")));
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return transactions;
+    }
+
+
+
+    public List<transaction> recupererTransactionAutre() {
+        List<transaction> transactions = new ArrayList<>();
+        String req = "SELECT * from transaction WHERE type_transaction='autre'";
+        try {
+            PreparedStatement pst = connection.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                transactions.add(new transaction(rs.getInt("id"), rs.getDouble("montant"), rs.getString("account_debited"), rs.getString("account_destination"),rs.getString("date_transaction"),rs.getString("type_transaction"),rs.getString("description"),rs.getInt("id_account_id")));
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return transactions;
+    }
+
 
 }

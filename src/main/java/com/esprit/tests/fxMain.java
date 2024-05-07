@@ -16,31 +16,10 @@ public class fxMain extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MenuAdmin.fxml"));
-        try {
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("Givest");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
-        ////////
-        /*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MenuClient.fxml"));
-        try {
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("Givest");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }*/
 
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherTransaction.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherTransaction.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterTransaction.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);
@@ -49,8 +28,6 @@ public class fxMain extends Application {
             primaryStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
-
-
         }
     }
 }

@@ -147,19 +147,6 @@ public class AffichageTransactionController {
         }
     }
 
-    @FXML
-    void GoToStat(ActionEvent event) throws IOException {
-        Node source = (Node) event.getSource();
-        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        currentStage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stat.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
-
 
     @FXML
     void retour(ActionEvent event) throws IOException {
@@ -228,5 +215,41 @@ public class AffichageTransactionController {
                 "Type de transaction :" + transaction.gettype_transaction() + "\n" +
                 "Description : " + transaction.getdescription() + "\n" +
                 "Compte association id :" + transaction.getid_account_id();
+    }
+
+    @FXML
+    void goTransaction(ActionEvent event) {
+
+
+    }
+
+    @FXML
+    void goassociation(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gopret(ActionEvent event) {
+
+    }
+
+    @FXML
+    void goseminaire(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gosponsoring(ActionEvent event) {
+
+    }
+
+    @FXML
+    void gouser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void logout(ActionEvent event) {
+
     }
 }
