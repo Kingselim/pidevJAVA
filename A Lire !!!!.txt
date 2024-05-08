@@ -1,0 +1,64 @@
+qui bech tsob el SQL ma tensech bech amel une petite verification a a kol chay ken famech erreur.
+
+
+
+
+-------------------Qui theb taadi une variable men page , lel page okhra (id du user)
+haw exemple mta code  qui permet d'ouvrir une nouvelle page :
+
+// Load and show the new interface
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/DoubleAuthuser.fxml"));
+                Parent root = loader.load();
+
+		// houni j'appel le controller de la page suivante 
+		// pui j'appel la methode setdata() , qui déjà pre definin dasn le controller
+
+                DoubleAuthuser controller = loader.getController();
+                controller.setData(codeDoubleAuth);
+
+                Stage newStage = new Stage();
+                newStage.setScene(new Scene(root));
+                newStage.show();
+                newStage.setTitle("Double Authentification");
+            } catch (IOException e) {
+                e.printStackTrace();
+                // Handle exception, if any
+            }
+
+
+-----------------------------voici un exemeplde la methode setData()
+
+public void setData(String dataToPass) {
+
+
+String val = dataToPass;
+
+
+
+// ou tsob el beki
+//…
+
+}
+
+
+pour plus d'exemple tnajmou tconsultiw mon code taw talkahwa barcha marat ;)
+
+
+
+
+cordialement slouma
+
+
+
+
+
+
+
+
+
+
+
+
+
+
