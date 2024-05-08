@@ -2,35 +2,54 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierSeminaire">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierSeminaire">
    <children>
-      <Text fill="#461acc" layoutX="133.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier un seminaire " textAlignment="CENTER">
-         <font>
-            <Font size="38.0" />
-         </font>
-      </Text>
-      <TextField fx:id="date_seminar" layoutX="267.0" layoutY="154.0" text="Date_Seminaire" />
-      <TextField fx:id="description" layoutX="267.0" layoutY="207.0" text="Description" />
-      <TextField fx:id="nomassociation" layoutX="267.0" layoutY="261.0" text="Nom_Association" />
-      <Text layoutX="115.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date_Seminaire :">
+      <TextField fx:id="date_seminar" layoutX="461.0" layoutY="174.0" style="-fx-border-color: #0046fe;" text="Date_Seminaire" />
+      <TextField fx:id="description" layoutX="461.0" layoutY="215.0" style="-fx-border-color: #0046fe;" text="Description" />
+      <TextField fx:id="nomassociation" layoutX="461.0" layoutY="258.0" style="-fx-border-color: #0046fe;" text="Nom_Association" />
+      <Text layoutX="316.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date_Seminaire :">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="115.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :">
+      <Text layoutX="343.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description :">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="114.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_association :">
+      <Text layoutX="322.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom_association :">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
       <Button fx:id="confirmerButton" layoutX="442.0" layoutY="317.0" mnemonicParsing="false" onAction="#updateOne" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #f0a63c;" text="Modifier" textAlignment="CENTER" textFill="#262523" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#264eca" height="523.0" layoutX="-29.0" layoutY="-8.0" stroke="WHITE" strokeType="OUTSIDE" width="192.0" />
+      <Pane layoutX="-8.0" layoutY="-107.0" prefHeight="200.0" prefWidth="765.0" style="-fx-background-color: white;">
+         <children>
+            <Text fill="#461acc" layoutX="256.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier un seminaire " textAlignment="CENTER" wrappingWidth="379.8394775390625">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="50.0" fitWidth="59.0" layoutX="681.0" layoutY="126.0">
+               <image>
+                  <Image url="@images/edit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="151.0" layoutX="21.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ivest.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

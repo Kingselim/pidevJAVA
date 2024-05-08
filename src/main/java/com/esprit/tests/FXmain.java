@@ -16,9 +16,9 @@ public class FXmain extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/MenuAdmin.fxml"));
-       // FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontListeSem.fxml"));
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("/MenuClient.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/BackAdmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherSeminaire.fxml"));
+       //FXMLLoader loader = new FXMLLoader(getClass().getResource("/FrontListeSem.fxml"));
         try {
             Parent root = loader.load();
             Scene scene = new Scene(root);

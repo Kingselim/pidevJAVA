@@ -2,41 +2,65 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierParticipant">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierParticipant">
    <children>
-      <Text fill="#3122bc" layoutX="169.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Participant" textAlignment="CENTER">
+      <Text fill="#3122bc" layoutX="169.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <TextField fx:id="name" layoutX="243.0" layoutY="119.0" promptText="Nom" />
-      <TextField fx:id="last_name" layoutX="244.0" layoutY="165.0" promptText="Prenom" />
-      <TextField fx:id="function" layoutX="245.0" layoutY="209.0" promptText="Fonction" />
-      <TextField fx:id="phone" layoutX="245.0" layoutY="254.0" promptText="Num_Tel" />
-      <Text layoutX="108.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" textAlignment="CENTER">
+      <TextField fx:id="name" layoutX="386.0" layoutY="128.0" promptText="Nom" style="-fx-border-color: #0046fe;" />
+      <TextField fx:id="last_name" layoutX="386.0" layoutY="174.0" promptText="Prenom" style="-fx-border-color: #0046fe;" />
+      <TextField fx:id="function" layoutX="386.0" layoutY="219.0" promptText="Fonction" style="-fx-border-color: #0046fe;" />
+      <TextField fx:id="phone" layoutX="386.0" layoutY="260.0" promptText="Num_Tel" style="-fx-border-color: #0046fe;" />
+      <Text layoutX="320.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="108.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" textAlignment="CENTER">
+      <Text layoutX="309.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="109.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fonction :" textAlignment="CENTER">
+      <Text layoutX="300.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fonction :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="109.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num_tel :" textAlignment="CENTER">
+      <Text layoutX="301.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num_tel :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Button fx:id="modifierpart" layoutX="413.0" layoutY="332.0" mnemonicParsing="false" onAction="#modifierpart" prefHeight="32.0" prefWidth="129.0" style="-fx-background-color: #dc8323;" text="Modifier Participant" textAlignment="CENTER" textFill="#0b0a0a" />
+      <Button fx:id="modifierpart" layoutX="413.0" layoutY="332.0" mnemonicParsing="false" onAction="#modifierpart" prefHeight="32.0" prefWidth="129.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Modifier " textAlignment="CENTER" textFill="#dfdada" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#264eca" height="527.0" layoutY="-3.0" stroke="WHITE" strokeType="OUTSIDE" width="160.0" />
+      <Pane layoutX="-1.0" prefHeight="74.0" prefWidth="771.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="151.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ivest.png" />
+               </image>
+            </ImageView>
+            <Text fill="#264eca" layoutX="303.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formulaire Participant">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="60.0" fitWidth="73.0" layoutX="670.0" layoutY="1.0">
+               <image>
+                  <Image url="@images/edit.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

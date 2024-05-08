@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherParticipant">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="773.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AfficherParticipant">
    <children>
-      <Text fill="#2044d7" layoutX="185.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des participants " textAlignment="CENTER">
+      <Text fill="#2044d7" layoutX="297.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des participants " textAlignment="CENTER">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <TableView fx:id="participant" layoutX="33.0" layoutY="104.0" prefHeight="317.0" prefWidth="574.0">
+      <TableView fx:id="participant" layoutX="198.0" layoutY="100.0" prefHeight="318.0" prefWidth="544.0">
         <columns>
           <TableColumn fx:id="idseminar_id" prefWidth="93.5999755859375" text="Id_Seminaire" />
           <TableColumn fx:id="name" prefWidth="100.00000762939453" text="Nom" />
@@ -25,17 +26,50 @@
             <TableColumn fx:id="phone" prefWidth="159.20004272460938" text="Num_Tel" />
         </columns>
       </TableView>
-      <Button fx:id="SupprimerParti" layoutX="527.0" layoutY="430.0" mnemonicParsing="false" onAction="#SupprimerParti" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #d92f2f;" text="Supprimer" textAlignment="CENTER" textFill="#1b1919" />
-      <Button fx:id="AjouterParticip" layoutX="432.0" layoutY="431.0" mnemonicParsing="false" onAction="#AjouterParticip" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #259c1a;" text="Ajouter" textAlignment="CENTER" textFill="#131513" />
-      <Button fx:id="Return" layoutX="18.0" layoutY="15.0" mnemonicParsing="false" onAction="#Return" style="-fx-background-color: #e8c015;" text="Retour" textAlignment="CENTER" />
-      <Button fx:id="buttonpdf" layoutX="523.0" layoutY="23.0" mnemonicParsing="false" onAction="#printLogPdf" prefHeight="54.0" prefWidth="52.0">
+      <Button fx:id="Return" layoutX="695.0" layoutY="22.0" mnemonicParsing="false" onAction="#Return" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: #264eca;" text="Retour" textAlignment="CENTER" textFill="#f4eded" />
+      <Button fx:id="buttonpdf" layoutX="207.0" layoutY="53.0" mnemonicParsing="false" onAction="#printLogPdf" prefHeight="40.0" prefWidth="38.0">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/format-de-fichier-pdf.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
+      <Button layoutX="28.0" layoutY="474.0" mnemonicParsing="false" opacity="0.0" prefHeight="26.0" prefWidth="38.0" text="logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="AjouterParticip" layoutX="483.0" layoutY="442.0" mnemonicParsing="false" onAction="#AjouterParticip" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #264eca; -fx-border-color: #5a61e1;" text="        Ajouter" textFill="#e8e8ef">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="SupprimerParti" layoutX="341.0" layoutY="442.0" mnemonicParsing="false" onAction="#SupprimerParti" prefHeight="40.0" prefWidth="106.0" style="-fx-background-color: #f4eded; -fx-background-radius: 30; -fx-border-color: #ea1616;" text="     Supprimer" textFill="#df3116">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="540.0" fitWidth="174.0">
+         <image>
+            <Image url="@images/NavClientSeminaire.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="493.0" layoutY="449.0">
+         <image>
+            <Image url="@images/plus.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="28.0" layoutX="341.0" layoutY="447.0">
+         <image>
+            <Image url="@images/delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="59.0" layoutX="657.0" layoutY="28.0">
+         <image>
+            <Image url="@images/upward-arrow.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

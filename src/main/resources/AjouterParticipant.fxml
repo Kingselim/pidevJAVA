@@ -3,47 +3,59 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AjouterParticipant">
+<AnchorPane layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="676.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AjouterParticipant">
    <children>
-      <Text fill="#1d2ec9" layoutX="160.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formulaire de  participation" textAlignment="CENTER">
+      <Text fill="#1d2ec9" layoutX="233.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formulaire de  participation" textAlignment="CENTER">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <TextField fx:id="function" layoutX="252.0" layoutY="231.0" promptText="Fonctions" />
-      <TextField fx:id="last_name" layoutX="252.0" layoutY="186.0" promptText="Prenom" />
-      <TextField fx:id="phone" layoutX="252.0" layoutY="277.0" promptText="Num de telephone" />
-      <TextField fx:id="name" layoutX="252.0" layoutY="143.0" promptText="Nom" />
-      <ComboBox fx:id="comboboxid" layoutX="252.0" layoutY="98.0" prefWidth="150.0" promptText="id_seminaire" />
-      <Button fx:id="AjouterParticipant" layoutX="434.0" layoutY="335.0" mnemonicParsing="false" onAction="#AjouterParticip" prefHeight="38.0" prefWidth="82.0" style="-fx-background-color: #1b8c13;" text="Participer" textAlignment="CENTER" textFill="#141514" />
-      <Text layoutX="125.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_Seminaire :" textAlignment="CENTER" wrappingWidth="108.471435546875">
+      <TextField fx:id="function" layoutX="475.0" layoutY="231.0" promptText="Fonctions" />
+      <TextField fx:id="last_name" layoutX="475.0" layoutY="183.0" promptText="Prenom" />
+      <TextField fx:id="phone" layoutX="475.0" layoutY="276.0" promptText="Num de telephone" />
+      <TextField fx:id="name" layoutX="475.0" layoutY="140.0" promptText="Nom" />
+      <ComboBox fx:id="comboboxid" layoutX="475.0" layoutY="100.0" prefWidth="150.0" promptText="id_seminaire" />
+      <Button fx:id="AjouterParticipant" layoutX="401.0" layoutY="335.0" mnemonicParsing="false" onAction="#AjouterParticip" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: #5b1adf;" text="       Participer" textAlignment="CENTER" textFill="#edecef" />
+      <Text layoutX="338.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id_Seminaire :" textAlignment="CENTER" wrappingWidth="108.471435546875">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="122.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" textAlignment="CENTER" wrappingWidth="58.17657470703125">
+      <Text layoutX="405.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" textAlignment="CENTER" wrappingWidth="58.17657470703125">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Text layoutX="130.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" textAlignment="CENTER">
+      <Text layoutX="392.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="129.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fontions :" textAlignment="CENTER">
+      <Text layoutX="386.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fonctions :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <Text layoutX="131.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num Tel :" textAlignment="CENTER">
+      <Text layoutX="389.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Num Tel :" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
+      <ImageView fitHeight="21.0" fitWidth="24.0" layoutX="413.0" layoutY="344.0">
+         <image>
+            <Image url="@images/plus.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="625.0" fitWidth="238.0" layoutX="-59.0" layoutY="-126.0">
+         <image>
+            <Image url="@images/pexels-adrien-olichon-1257089-3767170.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -10,9 +10,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import java.awt.*;
+import java.io.File;
 import java.io.IOException;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +26,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import okhttp3.*;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class AfficherParticipant implements Initializable {
 
@@ -240,7 +250,16 @@ public class AfficherParticipant implements Initializable {
             e.printStackTrace();
         }
     }
-    public void envoyermail(Participant participant)
+
+
+
+
+
+
+
+
+
+    public void envoyermail(Participant Participant)
     {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -263,6 +282,7 @@ public class AfficherParticipant implements Initializable {
     }
 
 
+
     void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
@@ -272,5 +292,9 @@ public class AfficherParticipant implements Initializable {
     }
 
 
+    public void gouser(ActionEvent actionEvent) {
+    }
 
+    public void goassociation(ActionEvent actionEvent) {
+    }
 }
