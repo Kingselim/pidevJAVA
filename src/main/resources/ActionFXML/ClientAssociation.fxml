@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ActionController.ClientAssociation">
+   <children>
+      <ImageView fitHeight="631.0" fitWidth="179.0" layoutX="-11.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagesAssociation/NavClientAssociation.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="label_titre" layoutX="253.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue sur le système Givest Banking">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="696.0" layoutY="34.0" onMouseClicked="#translateToFrench" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagesAssociation/france_8367455.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="745.0" layoutY="34.0" onMouseClicked="#translateToEnglish" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagesAssociation/uk_8367443.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="176.0" layoutY="92.0" prefHeight="134.0" prefWidth="603.0" style="-fx-background-color: #171717;">
+         <children>
+            <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="57.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/user_1077012.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="279.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/group_1357616.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="51.0" fitWidth="48.0" layoutX="508.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/3.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="nbr_utilisateur" fill="WHITE" layoutX="70.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="nbr_associations" fill="WHITE" layoutX="294.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="nbr_actions" fill="WHITE" layoutX="524.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Separator layoutX="53.0" layoutY="83.0" prefHeight="9.0" prefWidth="57.0" style="-fx-color: #43f501;" />
+            <Separator layoutX="275.0" layoutY="83.0" prefHeight="9.0" prefWidth="57.0" />
+            <Separator layoutX="504.0" layoutY="83.0" prefHeight="9.0" prefWidth="57.0" />
+            <Label fx:id="label_utilisateurs" layoutX="53.0" layoutY="94.0" text="Donateurs" textFill="#43f501">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="94.0" text="Associations" textFill="#43f501">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="513.0" layoutY="94.0" text="Actions" textFill="#43f501">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane layoutX="182.0" layoutY="260.0" prefHeight="134.0" prefWidth="166.0" style="-fx-border-color: #0046fe; -fx-background-color: #264eca; -fx-border-radius: 10;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="20.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AssociationFXML/imagesAssociation/files_901533.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="label_CreerAssociation" layoutX="8.0" layoutY="82.0" mnemonicParsing="false" onAction="#add_association" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: #264eca; -fx-background-radius: 30; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Créer association" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="57.0" fitWidth="79.0" layoutX="55.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/teamwork_4337297.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="404.0" layoutY="260.0" prefHeight="134.0" prefWidth="166.0" style="-fx-border-color: #0046fe; -fx-background-color: #264eca;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="20.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AssociationFXML/imagesAssociation/files_901533.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="label_CreerAction" layoutX="11.0" layoutY="80.0" mnemonicParsing="false" onAction="#add_action" prefHeight="39.0" prefWidth="144.0" style="-fx-background-color: #264eca; -fx-background-radius: 30; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Créer action" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="59.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/add_11081639.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="621.0" layoutY="260.0" prefHeight="134.0" prefWidth="158.0" style="-fx-border-color: #0046fe; -fx-background-color: #264eca;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="20.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AssociationFXML/imagesAssociation/files_901533.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="label_MesAssociation" layoutX="13.0" layoutY="80.0" mnemonicParsing="false" onAction="#show_my_associations" prefHeight="39.0" prefWidth="135.0" style="-fx-background-color: #264eca; -fx-background-radius: 30; -fx-shape: 10; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Mes associations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="57.0" fitWidth="57.0" layoutX="48.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/affiliate-marketing_2661410.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="182.0" layoutY="424.0" prefHeight="134.0" prefWidth="166.0" style="-fx-border-color: #0046fe; -fx-background-color: #264eca;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="20.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AssociationFXML/imagesAssociation/files_901533.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="label_VoirListeActions" layoutX="11.0" layoutY="76.0" mnemonicParsing="false" onAction="#show_actions" prefHeight="39.0" prefWidth="144.0" style="-fx-background-color: #264eca; -fx-background-radius: 30; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Liste des actions" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="48.0" fitWidth="57.0" layoutX="59.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/test_1061455.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="404.0" layoutY="424.0" prefHeight="134.0" prefWidth="166.0" style="-fx-border-color: #0046fe; -fx-background-color: #264eca;">
+         <children>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="20.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../AssociationFXML/imagesAssociation/files_901533.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="label_MesAction" layoutX="21.0" layoutY="80.0" mnemonicParsing="false" onAction="#show_my_actions" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #264eca; -fx-background-radius: 30; -fx-border-color: #ffffff; -fx-border-radius: 5;" text="Mes actions" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="59.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/project-management_14106103.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imageBack" fitHeight="37.0" fitWidth="53.0" layoutX="176.0" layoutY="32.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagesAssociation/back_2099190.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

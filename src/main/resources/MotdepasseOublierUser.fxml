@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.MotdepasseOublierUser">
+   <children>
+      <ImageView fitHeight="325.0" fitWidth="339.0" layoutX="73.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/elastic-8.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="407.0" layoutY="95.0" prefHeight="309.0" prefWidth="325.0">
+         <children>
+            <Label layoutX="45.0" layoutY="62.0" text="Mot de passe oublier" textFill="#3ec8ff">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="email" layoutX="50.0" layoutY="137.0" prefHeight="35.0" prefWidth="230.0" promptText="Email" style="-fx-background-color: none; -fx-border-color: #3ec8ff; -fx-border-radius: 5; -fx-text-fill: white;" />
+            <Label layoutX="89.0" layoutY="111.0" text="Veuiller saisir votre Email" textFill="#f97fff">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="48.0" layoutY="191.0" mnemonicParsing="false" onAction="#envoyer" prefHeight="25.0" prefWidth="230.0" style="-fx-background-color: #f97fff; -fx-background-radius: 30; -fx-border-radius: 30;" text="Envoyer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="226.0" layoutY="221.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: none;" text="Retour" textFill="#f200ff">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Line endX="-100.0" endY="301.6000061035156" layoutX="499.0" layoutY="91.0" startX="-100.0" stroke="#f97fff" strokeWidth="3.0" />
+   </children>
+</AnchorPane>

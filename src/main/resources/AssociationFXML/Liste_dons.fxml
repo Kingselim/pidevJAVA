@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.AssociationController.ListeDons">
+    <children>
+        <Button layoutX="234.0" layoutY="26.0" mnemonicParsing="false" onAction="#back" text="Retour" visible="false" />
+        <TableView fx:id="list_association" layoutX="183.0" layoutY="87.0" prefHeight="425.0" prefWidth="605.0" AnchorPane.leftAnchor="183.0" AnchorPane.rightAnchor="13.0">
+            <columns>
+                <TableColumn fx:id="idCol" prefWidth="59.99993818998337" text="ID" />
+                <TableColumn fx:id="id_actionCol" prefWidth="91.20001602172852" text="id_action" />
+                <TableColumn fx:id="date_donationCol" prefWidth="151.1999969482422" text="date de la donation" />
+                <TableColumn fx:id="donateurCol" minWidth="0.0" prefWidth="75.199951171875" text="Donateur" />
+                <TableColumn fx:id="emailCol" prefWidth="138.4000244140625" text="Email du donateur" />
+            <TableColumn fx:id="montantCol1" prefWidth="88.00006103515625" text="Montant " />
+            </columns>
+        </TableView>
+
+
+        <Text layoutX="183.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des dons">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="598.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagesAssociation/NavClientAssociation.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="36.0" fitWidth="52.0" layoutX="730.0" layoutY="30.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../imagesAssociation/back_2099190.png" />
+            </image>
+        </ImageView>
+    </children>
+
+</AnchorPane>

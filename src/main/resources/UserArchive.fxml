@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.UserArchive">
+   <children>
+      <ImageView fitHeight="110.0" fitWidth="808.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/barreup.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="183.0" layoutX="28.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ivest.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="42.0" layoutX="755.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/btnlogout.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="755.0" layoutY="42.0" mnemonicParsing="false" onAction="#logout" opacity="0.0" prefHeight="26.0" prefWidth="38.0" text="logout">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ScrollPane layoutX="-4.0" layoutY="105.0" prefHeight="391.0" prefWidth="808.0" style="-fx-padding: 10;">
+         <content>
+            <FlowPane fx:id="flowpaneaff" prefHeight="380.0" prefWidth="534.0" vgap="20.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

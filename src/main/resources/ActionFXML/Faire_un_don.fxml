@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ActionController.FaireUnDon">
+   <children>
+      <AnchorPane prefHeight="610.0" prefWidth="810.0" style="-fx-background-color: #f0f0f0;">
+         <children>
+            <Text fx:id="actionName" layoutX="26.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 38px; -fx-font-weight: bold; -fx-fill: #455a64;" text="Name Action">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Pane layoutX="26.0" layoutY="84.0" prefHeight="468.0" prefWidth="502.0" style="-fx-background-color: #ffffff; -fx-border-color: #0046fe; -fx-border-width: 1; -fx-border-radius: 5;">
+               <children>
+                  <TextField fx:id="nom" layoutX="36.0" layoutY="43.0" prefHeight="25.0" prefWidth="198.0" promptText="Taper votre nom" />
+                  <TextField fx:id="prenom" layoutX="265.0" layoutY="43.0" prefHeight="25.0" prefWidth="198.0" promptText="Taper votre prenom" />
+                  <TextField fx:id="email" layoutX="36.0" layoutY="109.0" prefHeight="25.0" prefWidth="429.0" promptText="Votre e-mail" />
+                  <TextField fx:id="montant" layoutX="36.0" layoutY="179.0" prefHeight="25.0" prefWidth="240.0" promptText="0 DT" />
+                  <TextField fx:id="numCarte" layoutX="36.0" layoutY="252.0" prefHeight="25.0" prefWidth="240.0" promptText="1234 1234 1234 1234" />
+                  <TextField fx:id="MMAA" layoutX="36.0" layoutY="277.0" prefHeight="25.0" prefWidth="120.0" promptText="MM/AA" />
+                  <TextField fx:id="CVC" layoutX="156.0" layoutY="277.0" prefHeight="25.0" prefWidth="120.0" promptText="CVC" />
+                  <TextField fx:id="nomComplet" layoutX="36.0" layoutY="346.0" prefHeight="25.0" prefWidth="240.0" promptText="Nom complet" />
+                  <Text layoutX="36.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom*" />
+                  <Text layoutX="265.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom*" />
+                  <Text layoutX="36.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e-mail*" />
+                  <Text layoutX="36.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choissier le montant de votre participation*" />
+                  <Text layoutX="36.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations de la carte*" />
+                  <Text layoutX="36.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du titulaire de la carte*" />
+                  <CheckBox fx:id="checkBox" layoutX="38.0" layoutY="388.0" mnemonicParsing="false" text="J'accepte les conditions générales d'utilisation" />
+                  <Button layoutX="210.0" layoutY="420.0" mnemonicParsing="false" onAction="#faireDon" style="-fx-background-color: #0046fe; -fx-border-radius: 10;" text="Faire un don" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="errorLabel" layoutX="327.0" layoutY="425.0" prefHeight="17.0" prefWidth="0.0" textFill="#fa0000" />
+               </children>
+            </Pane>
+            <Pane layoutX="542.0" layoutY="407.0" prefHeight="139.0" prefWidth="226.0" style="-fx-background-color: #ffffff; -fx-border-color: #0046fe; -fx-border-width: 1; -fx-border-radius: 5;">
+               <children>
+                  <Separator layoutX="8.0" layoutY="38.0" prefHeight="3.0" prefWidth="213.0" />
+                  <Label layoutX="19.0" layoutY="14.0" text="Plateforme de paiement 100% sécurisée">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="51.0" fitWidth="204.0" layoutX="33.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagesAssociation/smt.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="544.0" layoutY="83.0" prefHeight="214.0" prefWidth="226.0" style="-fx-background-color: #ffffff; -fx-border-color: #0046fe; -fx-border-width: 1; -fx-border-radius: 5;">
+               <children>
+                  <ProgressIndicator fx:id="progressIndicator" layoutX="100.0" layoutY="19.0" prefHeight="43.0" prefWidth="64.0" progress="0.0" />
+                  <Text fx:id="targetAmount" layoutX="124.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #666666;" text="terget amount" />
+                  <Label fx:id="montant_total" layoutX="99.0" layoutY="70.0" prefHeight="20.0" prefWidth="73.0" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="text">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <ImageView fitHeight="27.0" fitWidth="31.0" layoutX="136.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagesAssociation/group_1357616.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="31.0" layoutX="17.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagesAssociation/hourglass_1789952.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="134.0" layoutY="176.0" text="participants(s)" />
+                  <Label layoutX="15.0" layoutY="177.0" text="Jour(s) restant(s)" />
+                  <Text fx:id="participants" layoutX="175.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="jour_restants" layoutX="47.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Label layoutX="44.0" layoutY="98.0" text="Collectés sur :" />
+               </children>
+            </Pane>
+            <Pane layoutX="543.0" layoutY="318.0" prefHeight="68.0" prefWidth="225.0" style="-fx-background-color: #ffffff; -fx-border-color: #0046fe; -fx-border-width: 1; -fx-border-radius: 5;">
+               <children>
+                  <Label layoutX="31.0" layoutY="5.0" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="ORGANISÉ PAR L'ASSOCIATION" />
+                  <Separator layoutX="13.0" layoutY="27.0" prefHeight="3.0" prefWidth="198.0" />
+                  <Hyperlink fx:id="LinkAssociation" layoutX="1.0" layoutY="34.0" style="-fx-text-fill: #2196f3;" text="Link" />
+               </children>
+            </Pane>
+            <ImageView fx:id="backid" fitHeight="36.0" fitWidth="52.0" layoutX="728.0" layoutY="25.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagesAssociation/back_2099190.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

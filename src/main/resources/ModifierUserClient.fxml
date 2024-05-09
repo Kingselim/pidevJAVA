@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierUserClient">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="DODGERBLUE" height="58.0" layoutX="194.0" layoutY="23.0" stroke="WHITE" strokeType="INSIDE" width="559.0" />
+      <TextField fx:id="name" layoutX="243.0" layoutY="182.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="address" layoutX="243.0" layoutY="432.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="email" layoutX="243.0" layoutY="382.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="phone" layoutX="243.0" layoutY="331.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="dtb" layoutX="243.0" layoutY="281.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="lastname" layoutX="243.0" layoutY="233.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <TextField fx:id="image" layoutX="243.0" layoutY="482.0" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #0046fe; -fx-border-radius: 5;" />
+      <Button layoutX="672.0" layoutY="38.0" mnemonicParsing="false" onAction="#modifier" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="605.0" layoutY="38.0" mnemonicParsing="false" onAction="#retour" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label fx:id="label" layoutX="48.0" layoutY="124.0" />
+      <Button layoutX="423.0" layoutY="483.0" mnemonicParsing="false" onAction="#imgbtn" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="Image" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="579.0" fitWidth="175.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: white;">
+         <image>
+            <Image url="@images/NavClientUser.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="61.0" layoutY="171.0" mnemonicParsing="false" onAction="#gocompte" opacity="0.0" style="-fx-background-color: none;" text="Compte" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="72.0" layoutY="219.0" mnemonicParsing="false" onAction="#gopret" opacity="0.0" style="-fx-background-color: none;" text="Pret" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="53.0" layoutY="270.0" mnemonicParsing="false" onAction="#goseminair" opacity="0.0" style="-fx-background-color: none;" text="Seminaire" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="48.0" layoutY="322.0" mnemonicParsing="false" onAction="#gosponsoring" opacity="0.0" style="-fx-background-color: none;" text="Sponsoring" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="47.0" layoutY="373.0" mnemonicParsing="false" onAction="#goassociation" opacity="0.0" style="-fx-background-color: none;" text="Association" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="299.0" fitWidth="395.0" layoutX="454.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bonny-person.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="246.0" layoutY="166.0" text="Nom" />
+      <Label layoutX="246.0" layoutY="218.0" text="Prenom" />
+      <Label layoutX="246.0" layoutY="266.0" prefHeight="18.0" prefWidth="180.0" text="Date de Naissance   yyyy-mm-dd" />
+      <Label layoutX="247.0" layoutY="316.0" text="Numéro de téléphone" />
+      <Label layoutX="247.0" layoutY="367.0" text="Email" />
+      <Label layoutX="245.0" layoutY="417.0" text="Adresse" />
+      <Label layoutX="246.0" layoutY="467.0" text="Image" />
+      <Label layoutX="218.0" layoutY="38.0" text="Modifier vos données personnel" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
