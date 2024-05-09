@@ -7,10 +7,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
 
 public class ModifierSponsoring {
 
@@ -68,6 +71,14 @@ public class ModifierSponsoring {
         ss.modifier(updatedSponsoring); // Assuming you have an update method in your SponsoringService
 
         AfficherSponsoring.refreshGrid();
+
+        //notification
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Notification");
+        tray.setMessage("Sponsoring modifiee avec success");
+        tray.setNotificationType(NotificationType.INFORMATION);
+        tray.showAndWait();
+
     }
 
 
@@ -140,4 +151,6 @@ public class ModifierSponsoring {
     }
 
 
+    public void retour(ActionEvent actionEvent) {
+    }
 }

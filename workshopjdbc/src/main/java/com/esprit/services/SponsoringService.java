@@ -1,15 +1,13 @@
 package com.esprit.services;
 
-import com.esprit.models.DemandeSponsoring;
 import com.esprit.models.Sponsoring;
 import com.esprit.utils.DataSource;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SponsoringService implements IService<Sponsoring> {
 
@@ -39,9 +37,8 @@ public class SponsoringService implements IService<Sponsoring> {
     }
 
     @Override
-    public DemandeSponsoring update(Sponsoring sponsoring) throws SQLException {
+    public void update(Sponsoring sponsoring) throws SQLException {
 
-        return null;
     }
 
     @Override
@@ -116,4 +113,34 @@ public class SponsoringService implements IService<Sponsoring> {
         }
         return sponsoring;
     }
+
+    public Map<Integer, Integer> getSponsoringCounts() throws SQLException {
+        Map<Integer, Integer> sponsoringCounts = new HashMap<>();
+        String query = "SELECT idsponsoring_id, COUNT(*) AS count FROM demande_sponsoring GROUP BY idsponsoring_id";
+
+        try (Statement stmt = connection.createStatement();
+             ResultSet resultSet = stmt.executeQuery(query)) {
+            while (resultSet.next()) {
+                int sponsoringId = resultSet.getInt("idsponsoring_id");
+                int count = resultSet.getInt("count");
+                sponsoringCounts.put(sponsoringId, count);
+            }
+        }
+
+        return sponsoringCounts;
+    }
+    public String getSponsoringNameById(int sponsoringId) throws SQLException {
+        String query = "SELECT type FROM sponsoring WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, sponsoringId);
+            try (ResultSet resultSet = stmt.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getString("type");
+                }
+            }
+        }
+        return ""; // Or handle it differently based on your application's logic
+    }
+
+
 }

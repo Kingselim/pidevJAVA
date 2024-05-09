@@ -7,7 +7,6 @@ package com.esprit.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
@@ -17,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static javafx.fxml.FXMLLoader.load;
 
 /**
  * FXML Controller class
@@ -43,7 +44,7 @@ public class MenuController implements Initializable {
     private void loadPage(String page){          
         Parent root = null;
         try {
-        root = FXMLLoader.load(getClass().getResource("/"+page+".fxml"));
+        root = load(getClass().getResource("/"+page+".fxml"));
 
         } catch (Exception ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE,null,ex);

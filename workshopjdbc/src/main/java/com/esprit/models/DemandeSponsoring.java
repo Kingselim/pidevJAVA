@@ -26,9 +26,10 @@ public class DemandeSponsoring {
         this.id_user = id_user;
         this.nomassociation = nomassociation;
         this.autretype = autre;
-
     }
 
+    public DemandeSponsoring() {
+    }
 
     public DemandeSponsoring(int id, double budget, Date datedebut, Date datefin, int id_sponsoring, int id_user, String nomassociation) {
         this.id = id;

@@ -10,42 +10,47 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="638.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierDemandeSponsoring">
+<AnchorPane prefHeight="531.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.ModifierDemandeSponsoring">
     <children>
-        <Label layoutX="248.0" layoutY="128.0" text="Modifier Demande Sponsoring" textFill="#1307ff">
+        <Label layoutX="230.0" layoutY="84.0" text="Modifier Demande Sponsoring" textFill="#1307ff">
             <font>
-                <Font name="System Bold" size="35.0" />
+                <Font name="System Bold" size="24.0" />
             </font>
         </Label>
-        <Label layoutX="342.0" layoutY="234.0" text="Date de début" />
-        <DatePicker fx:id="dateDebutPicker" layoutX="450.0" layoutY="229.0" />
-        <Label layoutX="342.0" layoutY="274.0" text="Date de fin" />
-        <DatePicker fx:id="dateFinPicker" layoutX="450.0" layoutY="269.0" />
-        <Label layoutX="342.0" layoutY="314.0" text="Budget" />
-        <TextField fx:id="budgetField" layoutX="450.0" layoutY="309.0" />
-        <Label layoutX="342.0" layoutY="354.0" text="User ID" />
+        <Label layoutX="217.0" layoutY="169.0" text="Date de début" />
+        <DatePicker fx:id="dateDebutPicker" layoutX="325.0" layoutY="164.0" />
+        <Label layoutX="217.0" layoutY="209.0" text="Date de fin" />
+        <DatePicker fx:id="dateFinPicker" layoutX="325.0" layoutY="204.0" />
+        <Label layoutX="217.0" layoutY="249.0" text="Budget" />
+        <TextField fx:id="budgetField" layoutX="325.0" layoutY="244.0" />
+        <Label layoutX="217.0" layoutY="289.0" text="User ID" />
 
-        <Label layoutX="342.0" layoutY="394.0" text="Type" />
-        <Label layoutX="337.0" layoutY="429.0" text="Nom association" />
-        <TextField fx:id="nomAssociationField" layoutX="450.0" layoutY="434.0" />
-        <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="630.0" layoutY="495.0">
+        <Label layoutX="217.0" layoutY="329.0" text="Type" />
+        <Label layoutX="212.0" layoutY="364.0" text="Nom association" />
+        <TextField fx:id="nomAssociationField" layoutX="325.0" layoutY="369.0" />
+        <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="232.0" layoutY="434.0">
             <image>
                 <Image url="@img/user%20(1).png" />
             </image>
         </ImageView>
-        <Button layoutX="630.0" layoutY="495.0" mnemonicParsing="false" onAction="#ModifierDemande" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: transparent;" />
-        <TextField fx:id="userIdField" layoutX="450.0" layoutY="350.0" />
-        <TextField fx:id="sponsoringIdField" layoutX="618.0" layoutY="390.0" />
-      <ComboBox fx:id="typecombo" layoutX="450.0" layoutY="390.0" prefWidth="150.0" />
-      <ImageView fitHeight="724.0" fitWidth="191.0" layoutY="-10.0">
+        <Button layoutX="232.0" layoutY="434.0" mnemonicParsing="false" onAction="#ModifierDemande" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: transparent;" />
+        <TextField fx:id="userIdField" layoutX="325.0" layoutY="285.0" />
+        <TextField fx:id="sponsoringIdField" layoutX="493.0" layoutY="325.0" />
+      <ComboBox fx:id="typecombo" layoutX="325.0" layoutY="325.0" prefWidth="150.0" />
+      <ImageView fitHeight="546.0" fitWidth="191.0" layoutY="-10.0">
          <image>
             <Image url="@img/NavClientSponsoring.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="124.0" layoutX="693.0" layoutY="640.0">
+      <ImageView fitHeight="537.0" fitWidth="463.0" layoutX="416.0" layoutY="-1.0">
          <image>
-            <Image url="@img/backb.PNG" />
+            <Image url="@img/bgmenuclient.png" />
          </image>
       </ImageView>
+      <Button layoutX="297.0" layoutY="444.0" mnemonicParsing="false" onAction="#retour" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

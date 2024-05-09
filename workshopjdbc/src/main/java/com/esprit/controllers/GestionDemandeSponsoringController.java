@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.net.URL;
 import java.sql.Date;
@@ -69,6 +71,11 @@ public class GestionDemandeSponsoringController implements Initializable {
                     sponsoringIdField.getText()
             );
             dss.ajouter(ds);
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle("Notification");
+            tray.setMessage("votre demande a ete creer");
+            tray.setNotificationType(NotificationType.SUCCESS);
+            tray.showAndWait();
         }
     }
 
@@ -224,5 +231,8 @@ public class GestionDemandeSponsoringController implements Initializable {
         }
 
         return isValid;
+    }
+
+    public void retour(ActionEvent actionEvent) {
     }
 }

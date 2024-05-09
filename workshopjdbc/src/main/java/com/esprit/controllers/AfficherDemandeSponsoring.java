@@ -2,6 +2,7 @@ package com.esprit.controllers;
 
 import com.esprit.models.DemandeSponsoring;
 import com.esprit.services.DemandeSponsoringService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -95,7 +96,7 @@ public class AfficherDemandeSponsoring {
             ModifierDemandeSponsoring modifierController = loader.getController();
 
             // Pass the selected DemandeSponsoring object to the ModifierDemandeSponsoring controller
-            modifierController.initData(demandeSponsoring);
+            modifierController.initData(demandeSponsoring,this);
 
             // Create a new stage for the ModifierDemandeSponsoring
             Stage editStage = new Stage();
@@ -129,8 +130,35 @@ public class AfficherDemandeSponsoring {
     }
 
     public void ajoutdemande(javafx.event.ActionEvent actionEvent) {
-        // Your code to navigate to the ajoutdemande interface goes here
+        //loadPage("GestionDemandeSponsoring");
     }
 
 
+    public void goassociation(ActionEvent actionEvent) {
+    }
+
+    public void gocompte(ActionEvent actionEvent) {
+    }
+
+
+    public void gopret(ActionEvent actionEvent) {
+    }
+
+
+    public void goseminaire(ActionEvent actionEvent) {
+    }
+
+
+    public void gosponsoring(ActionEvent actionEvent) {
+    }
+
+
+    public void gouser(ActionEvent actionEvent) {
+    }
+
+    public void btnpdf(ActionEvent actionEvent) {
+    }
+
+    public void retour(ActionEvent actionEvent) {
+    }
 }

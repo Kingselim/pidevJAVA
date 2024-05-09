@@ -8,6 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.net.URL;
 import java.sql.Date;
@@ -52,6 +54,11 @@ public class AjouterSponsoring implements Initializable {
         Sponsoring s = new Sponsoring(Double.valueOf(budget.getText()), dates, type.getText());
         ss.ajouter(s);
         showSuccess("Sponsoring added successfully!");
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Notification");
+        tray.setMessage("Sponsoring ajoutee avec success");
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.showAndWait();
     }
 
 //    @FXML
@@ -147,4 +154,7 @@ public class AjouterSponsoring implements Initializable {
     }
 
 
+    public void retour(ActionEvent actionEvent) {
+
+    }
 }

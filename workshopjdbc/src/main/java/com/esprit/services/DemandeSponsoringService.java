@@ -47,7 +47,7 @@ public  class DemandeSponsoringService implements IService<DemandeSponsoring>  {
 
 
 
-    public DemandeSponsoring update(DemandeSponsoring demandeSponsoring) {
+    public void update(DemandeSponsoring demandeSponsoring) {
         String req = "UPDATE demande_sponsoring SET idsponsoring_id = ?, user_id = ?, datedebut = ?, datefin = ?, budget = ?, nom_association = ?, autretype = ? WHERE id = ?";
         try {
             PreparedStatement pst = connection.prepareStatement(req);
@@ -64,7 +64,6 @@ public  class DemandeSponsoringService implements IService<DemandeSponsoring>  {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return demandeSponsoring;
     }
     public void supprimer(DemandeSponsoring demandesponsoring) {
         String req = "DELETE from demande_sponsoring where id = ?;";

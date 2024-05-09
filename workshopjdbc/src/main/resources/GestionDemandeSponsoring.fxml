@@ -5,49 +5,58 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="647.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.GestionDemandeSponsoringController">
+<AnchorPane prefHeight="540.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esprit.controllers.GestionDemandeSponsoringController">
     <children>
-        <Label layoutX="284.0" layoutY="174.0" text="Ajouter Demande Sponsoring" textFill="#1e29eb">
+        <Label layoutX="201.0" layoutY="122.0" text="Ajouter Demande Sponsoring" textFill="#1e29eb">
             <font>
                 <Font name="System Bold" size="35.0" />
             </font>
         </Label>
-        <Label layoutX="282.0" layoutY="281.0" text="Date de début" />
-        <DatePicker fx:id="dateDebutPicker" layoutX="390.0" layoutY="276.0" />
-        <Label layoutX="282.0" layoutY="321.0" text="Date de fin" />
-        <DatePicker fx:id="dateFinPicker" layoutX="390.0" layoutY="316.0" />
-        <TextField fx:id="budgetField" layoutX="390.0" layoutY="356.0" />
-        <Label layoutX="282.0" layoutY="361.0" text="Budget" />
-        <TextField fx:id="sponsoringIdField" layoutX="564.0" layoutY="446.0" visible="false"/>
-        <Label layoutX="282.0" layoutY="401.0" text="User ID" />
+        <Label layoutX="223.0" layoutY="216.0" text="Date de début" />
+        <DatePicker fx:id="dateDebutPicker" layoutX="331.0" layoutY="211.0" />
+        <Label layoutX="223.0" layoutY="256.0" text="Date de fin" />
+        <DatePicker fx:id="dateFinPicker" layoutX="331.0" layoutY="251.0" />
+        <TextField fx:id="budgetField" layoutX="331.0" layoutY="291.0" />
+        <Label layoutX="223.0" layoutY="296.0" text="Budget" />
+        <TextField fx:id="sponsoringIdField" layoutX="505.0" layoutY="381.0" visible="false" />
+        <Label layoutX="223.0" layoutY="336.0" text="User ID" />
 
-        <Label layoutX="282.0" layoutY="441.0" text="Type" />
-        <Label layoutX="277.0" layoutY="476.0" text="Nom association" />
-        <TextField fx:id="nomAssociationField" layoutX="390.0" layoutY="481.0" />
-          <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="790.0" layoutY="529.0">
+        <Label layoutX="223.0" layoutY="376.0" text="Type" />
+        <Label layoutX="218.0" layoutY="411.0" text="Nom association" />
+        <TextField fx:id="nomAssociationField" layoutX="331.0" layoutY="416.0" />
+          <ImageView fitHeight="42.0" fitWidth="49.0" layoutX="258.0" layoutY="458.0">
          <image>
             <Image url="@img/icons8-ajouter-48.png" />
          </image>
       </ImageView>
-      <Button layoutX="790.0" layoutY="529.0" mnemonicParsing="false" onAction="#AjouterDemande" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: transparent;" />
-      <TextField fx:id="userIdField" layoutX="390.0" layoutY="397.0" />
-      <TextField fx:id="sponsoringIdField" layoutX="564.0" layoutY="446.0" />
-      <ComboBox fx:id="typecombo" layoutX="390.0" layoutY="446.0" prefWidth="150.0" />
-      <ImageView fitHeight="709.0" fitWidth="205.0" layoutY="-7.0">
+      <Button layoutX="258.0" layoutY="458.0" mnemonicParsing="false" onAction="#AjouterDemande" prefHeight="42.0" prefWidth="49.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="userIdField" layoutX="331.0" layoutY="332.0" />
+      <TextField fx:id="sponsoringIdField" layoutX="505.0" layoutY="381.0" />
+      <ComboBox fx:id="typecombo" layoutX="331.0" layoutY="381.0" prefWidth="150.0" />
+      <ImageView fitHeight="588.0" fitWidth="557.0" layoutX="410.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/bgmenuclient.png" />
+         </image>
+         <effect>
+            <BoxBlur height="2.0" iterations="3" width="2.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="587.0" fitWidth="174.0" layoutX="-2.0" layoutY="1.0">
          <image>
             <Image url="@img/NavClientSponsoring.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="124.0" layoutX="815.0" layoutY="619.0">
-         <image>
-            <Image url="@img/backb.PNG" />
-         </image>
-      </ImageView>
+      <Button layoutX="218.0" layoutY="533.0" mnemonicParsing="false" onAction="#retour" prefHeight="35.0" prefWidth="89.0" style="-fx-background-color: #264eca; -fx-background-radius: 30;" text="retour" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
 
 
     </children>

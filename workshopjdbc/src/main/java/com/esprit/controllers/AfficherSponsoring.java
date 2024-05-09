@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public class AfficherSponsoring {
 
@@ -25,7 +28,8 @@ public class AfficherSponsoring {
     @FXML
     private TextField recherche;
 
-
+    @FXML
+    private BarChart<String, Number> barChart;
     private final SponsoringService sponsoringService = new SponsoringService();
 
 
@@ -33,6 +37,8 @@ public class AfficherSponsoring {
     public void initialize() {
         try {
             // Load data from the service and populate the GridPane
+            Stat();
+
             populateGrid();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -149,6 +155,12 @@ public class AfficherSponsoring {
         loadPage("AjouterSponsoring");
     }
 
+    public void btnpdf(ActionEvent actionEvent) {
+    }
+
+    public void retour(ActionEvent actionEvent) {
+    }
+
 //    private void showAlert(String message) {
 //        Alert alert = new Alert(Alert.AlertType.WARNING);
 //        alert.setTitle("Avertissement");
@@ -156,6 +168,33 @@ public class AfficherSponsoring {
 //        alert.setContentText(message);
 //        alert.showAndWait();
 //    }
+
+    public void Stat() throws SQLException {
+        barChart.getData().clear();
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+        series.setName("Répartition des Sponsoring");
+
+        try {
+            Map<Integer, Integer> sponsoringCounts = sponsoringService.getSponsoringCounts();
+
+            // Add data for each sponsoring
+            for (Map.Entry<Integer, Integer> entry : sponsoringCounts.entrySet()) {
+                int sponsoringId = entry.getKey();
+                int count = entry.getValue();
+
+                // Retrieve sponsoring name from database based on ID
+                String sponsoringName = sponsoringService.getSponsoringNameById(sponsoringId);
+
+                // Add data point to series
+                series.getData().add(new XYChart.Data<>(sponsoringName, count));
+            }
+
+            barChart.getData().add(series);
+        } catch (SQLException e) {
+            // Handle exceptions
+            e.printStackTrace();
+        }
+    }
 
 
 }

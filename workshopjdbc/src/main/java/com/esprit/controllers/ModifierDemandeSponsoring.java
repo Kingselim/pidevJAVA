@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 import java.net.URL;
 import java.sql.Date;
@@ -46,11 +48,13 @@ public class ModifierDemandeSponsoring implements Initializable {
     private final DemandeSponsoringService demandeSponsoringService = new DemandeSponsoringService();
     private final SponsoringService sponsoringService = new SponsoringService();
 
+    private AfficherDemandeSponsoring afficherDemandeSponsoring; // Reference to the parent controller
 
 
+    private DemandeSponsoring demandeSponsoring = new DemandeSponsoring();
 
 
-    public void initData(DemandeSponsoring demandeSponsoring) {
+    public void initData(DemandeSponsoring demandeSponsoring,AfficherDemandeSponsoring afficherDemandeSponsoring) {
         budgetField.setText(String.valueOf(demandeSponsoring.getBudget()));
         dateDebutPicker.setValue(demandeSponsoring.getDatedebut().toLocalDate());
         dateFinPicker.setValue(demandeSponsoring.getDatefin().toLocalDate());
@@ -61,6 +65,8 @@ public class ModifierDemandeSponsoring implements Initializable {
         // Populate the ComboBox with all sponsoring types
         populateComboBox();
         typecombo.getSelectionModel().select(demandeSponsoring.getSponsoring().getType());
+        this.afficherDemandeSponsoring = afficherDemandeSponsoring;
+    this.demandeSponsoring = demandeSponsoring;
     }
 
 
@@ -72,28 +78,40 @@ public class ModifierDemandeSponsoring implements Initializable {
             LocalDate selectedDateFin = dateFinPicker.getValue();
             Date dateDebut = Date.valueOf(selectedDateDebut);
             Date dateFin = Date.valueOf(selectedDateFin);
-
+            int idsponsoring = getSelectedTypeID();
             DemandeSponsoring updatedDemandeSponsoring = new DemandeSponsoring(
-                    Integer.parseInt(userIdField.getText()),
+                     demandeSponsoring.getId(),
                     Double.parseDouble(budgetField.getText()),
                     dateDebut,
                     dateFin,
-                    Integer.parseInt(sponsoringIdField.getText()),
-                    Integer.parseInt(userIdField.getText()), nomAssociationField.getText(),
+                    idsponsoring,
+                    Integer.parseInt(userIdField.getText()),
+                    nomAssociationField.getText(),
                     sponsoringIdField.getText());
 
             demandeSponsoringService.update(updatedDemandeSponsoring);
-            AfficherDemandeSponsoring afficherDemandeSponsoring = new AfficherDemandeSponsoring();
             try {
-                afficherDemandeSponsoring.refreshGrid();
+                this.afficherDemandeSponsoring.refreshGrid();
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle("Notification");
+            tray.setMessage("Votre demande a ete modifiee");
+            tray.setNotificationType(NotificationType.INFORMATION);
+            tray.showAndWait();
         }
 
     }
-
+    private int getSelectedTypeID() {
+        String selectedType = typecombo.getValue();
+        if (selectedType != null && typeIDMap.containsKey(selectedType)) {
+            return typeIDMap.get(selectedType);
+        } else {
+            return -1; // Return -1 if no type is selected or if the type is not found in the map
+        }
+    }
     private boolean validateInputs() {
         boolean isValid = true;
 
@@ -205,5 +223,9 @@ public class ModifierDemandeSponsoring implements Initializable {
                 nomAssociationField.setStyle("-fx-border-color: none;");
             }
         });
+    }
+
+    public void retour(ActionEvent actionEvent) {
+
     }
 }
