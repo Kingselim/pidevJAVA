@@ -197,4 +197,28 @@ public class AfficherSponsoring {
     }
 
 
+    public void gouser(ActionEvent actionEvent) {
+    }
+
+    public void goassociation(ActionEvent actionEvent) {
+    }
+
+    public void gocompte(ActionEvent actionEvent) {
+    }
+
+
+    public void gopret(ActionEvent actionEvent) {
+    }
+
+
+    public void goseminaire(ActionEvent actionEvent) {
+    }
+
+
+    public void gosponsoring(ActionEvent actionEvent) {
+    }
+
+
+    public void logout(ActionEvent actionEvent) {
+    }
 }

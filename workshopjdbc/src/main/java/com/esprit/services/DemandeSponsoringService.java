@@ -16,7 +16,7 @@ public  class DemandeSponsoringService implements IService<DemandeSponsoring>  {
     private Connection connection;
 
     public DemandeSponsoringService() {
-        connection = DataSource.getInstance().getConnection();
+            connection = DataSource.getInstance().getConnection();
     }
 
     SponsoringService sponsoringService = new SponsoringService();

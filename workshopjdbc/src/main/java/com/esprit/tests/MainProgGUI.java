@@ -16,20 +16,15 @@ public class MainProgGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu.fxml"));
-
-        Parent root = null;
         try {
-            root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Menu.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Gestion Sponsoring");
+            primaryStage.setScene(scene);
+            primaryStage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Gestion Sponsoring");
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
-
-
-
 }

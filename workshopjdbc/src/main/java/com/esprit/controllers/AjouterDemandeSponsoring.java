@@ -5,14 +5,20 @@ import com.esprit.models.Sponsoring;
 import com.esprit.services.DemandeSponsoringService;
 import com.esprit.services.SponsoringService;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -22,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class GestionDemandeSponsoringController implements Initializable {
+public class AjouterDemandeSponsoring implements Initializable {
 
     @FXML
     private DatePicker dateDebutPicker;
@@ -234,5 +240,38 @@ public class GestionDemandeSponsoringController implements Initializable {
     }
 
     public void retour(ActionEvent actionEvent) {
+        try {
+            // Fermeture de la fenêtre actuelle
+            Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            currentStage.close();
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherDemandeSponsoring.fxml"));
+            Parent root = loader.load();
+            // Création de la scène
+            Scene scene = new Scene(root);
+            // Création de la nouvelle fenêtre pour afficher la vue AffcherCompte.fxml
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Afficher demande sponsoring");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void gouser(ActionEvent actionEvent) {
+    }
+
+    public void gocompte(ActionEvent actionEvent) {
+    }
+
+    public void gopret(ActionEvent actionEvent) {
+    }
+
+    public void goseminair(ActionEvent actionEvent) {
+    }
+
+    public void goassociation(ActionEvent actionEvent) {
     }
 }

@@ -63,10 +63,10 @@ public class MenuController implements Initializable {
     }
 
     public void InterAjouterDemande(ActionEvent actionEvent) {
-        loadPage("GestionDemandeSponsoring");
+        loadPage("AjouterDemandeSponsoring");
     }
 
     public  void InterAfficherD(ActionEvent actionEvent){
-        loadPage("GestionDemandeSponsoringAff");
+        loadPage("AfficherDemandeSponsoring");
     }
 }
